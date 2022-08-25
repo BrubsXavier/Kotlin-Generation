@@ -8,12 +8,13 @@ class Client(
     init {
         checkData()
     }
- private var shoplist = mutableListOf<String>()
+ private var _shoplist = mutableListOf<String>()
+    var shopList: List <String> = _shoplist
 
     fun addproduct(product: String){
 
         if(product != ""){
-            shoplist.add(product)
+            _shoplist.add(product)
             println("Produto adicionado com sucesso!")
 
         }else{
@@ -21,14 +22,12 @@ class Client(
         }
     }
 
-    fun removeproduct(){
+    fun removeproduct(product: String){
 
         while (true){
-            println("Digite um item para ser excluído da lista: ")
-            val product = readln()
 
-           if(shoplist.contains(product)){
-                shoplist.remove(product)
+           if(_shoplist.contains(product)){
+                _shoplist.remove(product)
                 println("$product excluído com sucesso!")
                 break
             }else{
@@ -38,7 +37,7 @@ class Client(
     }
     fun listproduct () {
         println()
-        println(shoplist)
+        println(_shoplist)
     }
 
     private fun checkData() {
@@ -50,7 +49,7 @@ class Client(
 
 }
 
-private fun String.add(shoplist: MutableList<String>) {
+private fun String.add(_shoplist: MutableList<String>) {
 
 }
 

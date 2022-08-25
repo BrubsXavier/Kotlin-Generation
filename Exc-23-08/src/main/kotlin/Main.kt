@@ -43,7 +43,11 @@ fun main() {
                     val product = readln()
                     client1.addproduct(product)
                 }
-                2 -> client1.removeproduct()
+                2 -> {
+                    print("Remova um produto da Lista de compras: ")
+                    val product = readln()
+                    client1.removeproduct(product)
+                }
                 3 -> client1.listproduct()
                 4 -> {
                     println("Obrigada por utilizar nosso sistema: ")
